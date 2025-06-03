@@ -1,0 +1,24 @@
+body{
+    background: #000000;
+}
+
+.header{
+    background: #262626;
+    color: azure;
+
+}
+
+h1{
+    color: aliceblue;
+}
+
+p{
+    color: aliceblue;
+}
+
+footer{
+    color: rgb(117, 117, 117);
+    background: #161616;
+    margin-top: 3rem;
+    padding: 2.5rem;
+}
