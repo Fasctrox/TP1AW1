@@ -19,7 +19,7 @@ const cardData = [
         img: '../../assets/ropa.webp',
         title: 'Ropa Deportiva',
         desc: 'Ropa cómoda, funcional y con estilo para entrenar.',
-        href: 'ropa/ropa/html'
+        href: 'ropa/ropa.html'
     }
 ]
 

@@ -10,7 +10,7 @@ export const cardProductComponent = (data) => {
 
                 <div class="card-footer d-flex justify-content-between align-items-center mt-3">
                     <small class="text-muted">${data.time}</small>
-                    <a href="#" class="btn btn-primary">Inscribirse</a>
+                    <a href="#" class="btn btn-primary">${data.act}</a>
                 </div>
             </div>
         </div>

@@ -8,12 +8,14 @@ const cardData = [
         title: 'Zapatillas',
         desc: 'Zapatillas deportivas para hacer tus actividades favoritas.',
         price: 'Precio: $15000',
+        act: 'Comprar'
     },
     {
         img: '../../assets/musculosa.webp',
         title: 'Musculosa',
         desc: 'Musculosa para entrenamiento de alto impacto.',
         price: 'Precio: $25000',
+        act: 'Comprar'
     }
 ]
 

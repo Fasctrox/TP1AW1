@@ -23,23 +23,12 @@
                             <button type="submit" class="btn btn-dark w-100">Ingresar</button>
                         </form>
 
-                        <script type="module">
-                            document.getElementById('loginForm').addEventListener('submit', (e) => {
-                                e.preventDefault();
-
-                                // Simulación de login OK:
-                                localStorage.setItem('userLogged', true);
-
-                                // Redirigir a home
-                                window.location.href = "../../home/home.html";
-                            });
-                        </script>
-
                     <p class="text-center mt-3">
                         ¿No tenés cuenta? <a href="../signup/registro.html">Registrate aquí</a>
                     </p>
                 </div>
             </div>
         </div>
+        <script type="module" src="./login.js"></script>
     </body>
 </html>

@@ -29,7 +29,7 @@ export const navbarComponent = `
                                 `
                             }).join('')
                         }
-                        <li class="nav-item"><a class="btn btn-danger ms-2" id="logoutBtn""><i class="bi bi-box-arrow-left"></i></a></li>
+                        <li class="nav-item"><a class="btn btn-danger ms-2" href="../../pages/auth/login/login.html" id="logoutBtn""><i class="bi bi-box-arrow-left"></i></a></li>
                     </ul>
                 </div>
             </div>
