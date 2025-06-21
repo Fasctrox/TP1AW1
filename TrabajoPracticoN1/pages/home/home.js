@@ -1,17 +1,30 @@
-import { cardComponent } from "../../components/card.component.js"
+import { cardComponent } from "../../components/cardCategory.component.js"
 
-let cardConteiner = document.getElementById('cardContainer')
+let cardConteiner = document.getElementById('cardConteiner')
 
-let carData = [
-    {title: 'Calculo 1', a: 6, b:4, footer: 'Soy un footer'},
-    {title: 'Calculo 2', a: 2, b:0, footer: 'Soy un footer'},
-    {title: 'Calculo 3', a: 7, b:8, footer: 'Soy un footer'},
-    {title: 'Calculo 4', a: 10, b:9, footer: 'Soy un footer'}
+const cardData = [
+    {
+        img: '../../assets/clase.webp',
+        title: 'Clases',
+        desc: 'Funcional, GAP, Salsa, Crossfit, Bachata y más.',
+        href: 'clases/clases.html'
+    },
+    {
+        img: '../../assets/suplementos.webp',
+        title: 'Productos Alimenticios',
+        desc: 'Proteínas, creatina, pre-entrenos y más suplementos.',
+        href: 'productos/productos.html'
+    },
+    {
+        img: '../../assets/ropa.webp',
+        title: 'Ropa Deportiva',
+        desc: 'Ropa cómoda, funcional y con estilo para entrenar.',
+        href: 'ropa/ropa/html'
+    }
 ]
 
 window.addEventListener('load', ()=>{
-
-    const cards = carData.map(e=>{
+    const cards = cardData.map(e=>{
         return cardComponent(e)
     }).join('')
     cardConteiner.innerHTML = cards

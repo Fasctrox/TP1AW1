@@ -11,7 +11,7 @@
             <div class="row justify-content-center">
                 <div class="form-container col-md-4">
                     <h2 class="text-center mb-4">Iniciar Sesión</h2>
-                        <form action="#" method="post">
+                        <form id="loginForm" action="#" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
                                 <input type="email" class="form-control" required>
@@ -22,8 +22,21 @@
                             </div>
                             <button type="submit" class="btn btn-dark w-100">Ingresar</button>
                         </form>
+
+                        <script type="module">
+                            document.getElementById('loginForm').addEventListener('submit', (e) => {
+                                e.preventDefault();
+
+                                // Simulación de login OK:
+                                localStorage.setItem('userLogged', true);
+
+                                // Redirigir a home
+                                window.location.href = "../../home/home.html";
+                            });
+                        </script>
+
                     <p class="text-center mt-3">
-                        ¿No tenés cuenta? <a href="registro.html">Registrate aquí</a>
+                        ¿No tenés cuenta? <a href="../signup/registro.html">Registrate aquí</a>
                     </p>
                 </div>
             </div>

@@ -10,7 +10,7 @@ const navElements = [
 export const navbarComponent = `
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../../index.html">
                     <img src="../../assets/logo.webp" width="80" height="80" alt="Logo"> FitStore
                 </a>
 
@@ -29,7 +29,7 @@ export const navbarComponent = `
                                 `
                             }).join('')
                         }
-                        <li class="nav-item"><a class="btn btn-danger ms-2" href="${url}login/login.html"><i class="bi bi-box-arrow-left"></i></a></li>
+                        <li class="nav-item"><a class="btn btn-danger ms-2" id="logoutBtn""><i class="bi bi-box-arrow-left"></i></a></li>
                     </ul>
                 </div>
             </div>
