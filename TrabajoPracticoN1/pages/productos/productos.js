@@ -1,6 +1,18 @@
 import { cardProductComponent } from '../../components/cardProduct.component.js'
+import { loadCards } from '../../utils/loadCards.js'
 
-let cardProductConteiner = document.getElementById('cardProductConteiner')
+window.addEventListener('DOMContentLoaded', () => {
+    loadCards({
+        categoria: 'producto',
+        containerSelector: '#cardProductContainer',
+        cardComponent: cardProductComponent
+    })
+})
+
+
+/*
+
+Datos obtenidos de un array del tp3
 
 const cardData = [
     {
@@ -32,3 +44,6 @@ window.addEventListener('load', ()=>{
     }).join('')
     cardProductConteiner.innerHTML = cards
 })
+
+
+*/

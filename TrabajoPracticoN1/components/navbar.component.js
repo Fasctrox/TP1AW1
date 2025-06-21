@@ -11,7 +11,7 @@ export const navbarComponent = `
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../../index.html">
-                    <img src="../../assets/logo.webp" width="80" height="80" alt="Logo"> FitStore
+                    <img src="../../assets/images/logo.webp" width="80" height="80" alt="Logo"> FitStore
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
