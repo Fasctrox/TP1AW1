@@ -1,10 +1,8 @@
-const url = "http://127.0.0.1:5500/TrabajoPracticoN1/pages/"
-
 const navElements = [
-    {title:'Home', link:`${url}home/home.html`},
-    {title:'Clases', link:`${url}clases/clases.html`},
-    {title:'Productos', link:`${url}productos/productos.html`},
-    {title:'Ropa', link:`${url}ropa/ropa.html`},
+    {title:'Home', link:`../../pages/home/home.html`},
+    {title:'Clases', link:`../../pages/clases/clases.html`},
+    {title:'Productos', link:`../../pages/productos/productos.html`},
+    {title:'Ropa', link:`../../pages/ropa/ropa.html`},
 ]
 
 export const navbarComponent = `
