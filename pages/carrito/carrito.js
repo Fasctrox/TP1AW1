@@ -27,7 +27,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                     <div class="col-md-6">
                         <h5>${producto.title}</h5>
                         <p>${producto.desc}</p>
-                        <p>Tipo: ${item.tipo}</p>
                     </div>
                     <div class="col-md-4 text-end">
                         <p>Cantidad: ${item.cantidad}</p>

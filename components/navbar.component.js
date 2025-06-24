@@ -27,7 +27,7 @@ export const navbarComponent = (user) => {
                     }
                     ${user ? `
                         <li class="nav-item d-flex align-items-center mx-2">
-                            <img src="${user.foto || '/TrabajoPracticoN1/assets/images/perfil.webp'}" width="30" class="rounded-circle me-2" />
+                            <img src="${user.foto || '/assets/images/perfil.webp'}" width="30" class="rounded-circle me-2" />
                             <span>${user.name}</span>
                         </li>` : ''}
                     <li class="nav-item">
