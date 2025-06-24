@@ -1,49 +1,33 @@
 import { cardProductComponent } from '../../components/cardProduct.component.js'
-import { loadCards } from '../../utils/loadCards.js'
+import { addToCart } from '../../utils/localStorageController.js';
 
-window.addEventListener('DOMContentLoaded', () => {
-    loadCards({
-        categoria: 'producto',
-        containerSelector: '#cardProductContainer',
-        cardComponent: cardProductComponent
-    })
-})
+let cardProductContainer = document.getElementById('cardProductContainer');
 
+window.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('../../assets/data/product.json');
+        const productosData = await response.json();
 
-/*
+        const cards = productosData
+            .filter(producto => producto.categoria === 'producto') // solo productos comprables
+            .map(producto => cardProductComponent(producto))
+            .join('');
 
-Datos obtenidos de un array del tp3
+        cardProductContainer.innerHTML = cards;
 
-const cardData = [
-    {
-        img: '../../assets/proteina.webp',
-        title: 'Proteina',
-        desc: 'Sumplemento deportivo para ganar esa masa muscular que tanto deseas.',
-        price: 'Precio: $10000',
-        act: 'Comprar'
-    },
-    {
-        img: '../../assets/creatina.webp',
-        title: 'Creatina',
-        desc: 'Sustancia natural que ayuda a los músculos a producir energía.',
-        price: 'Precio: $20000',
-        act: 'Comprar'
-    },
-    {
-        img: '../../assets/gel.webp',
-        title:'Gel energetico',
-        desc: 'Para un aporte rápido de carbohidratos durante entrenamientos de larga duración.',
-        time: 'Precio: $5000',
-        act: 'Comprar'
+        // NUEVO: listeners para botones de agregar
+        productosData
+            .filter(producto => producto.categoria === 'producto')
+            .forEach(producto => {
+                const btn = document.getElementById(`add-${producto.id}`);
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        addToCart(producto.id);
+                    });
+                }
+            });
+
+    } catch (e) {
+        console.error('Error al cargar los productos:', e);
     }
-]
-
-window.addEventListener('load', ()=>{
-    const cards = cardData.map(e=>{
-        return cardProductComponent(e)
-    }).join('')
-    cardProductConteiner.innerHTML = cards
-})
-
-
-*/
+});

@@ -1,39 +1,33 @@
-import { cardProductComponent } from '../../components/cardProduct.component.js'
-import { loadCards } from '../../utils/loadCards.js'
+import { cardProductComponent } from '../../components/cardProduct.component.js';
+import { addToCart } from '../../utils/localStorageController.js';  // NUEVO: importar addToCart
 
-window.addEventListener('DOMContentLoaded', () => {
-    loadCards({
-        categoria: 'ropa',
-        containerSelector: '#cardProductContainer',
-        cardComponent: cardProductComponent
-    })
-})
+let cardProductContainer = document.getElementById('cardProductContainer');
 
-/*
-Datos obtenidos de un array del tp3
+window.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('../../assets/data/product.json');
+        const productosData = await response.json();
 
-const cardData = [
-    {
-        img: '../../assets/zapas.webp',
-        title: 'Zapatillas',
-        desc: 'Zapatillas deportivas para hacer tus actividades favoritas.',
-        price: 'Precio: $15000',
-        act: 'Comprar'
-    },
-    {
-        img: '../../assets/musculosa.webp',
-        title: 'Musculosa',
-        desc: 'Musculosa para entrenamiento de alto impacto.',
-        price: 'Precio: $25000',
-        act: 'Comprar'
+        const cards = productosData
+            .filter(producto => producto.categoria === 'ropa') // solo productos comprables
+            .map(producto => cardProductComponent(producto))
+            .join('');
+
+        cardProductContainer.innerHTML = cards;
+
+        // NUEVO: listeners para botones de agregar
+        productosData
+            .filter(producto => producto.categoria === 'ropa')
+            .forEach(producto => {
+                const btn = document.getElementById(`add-${producto.id}`);
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        addToCart(producto.id);
+                    });
+                }
+            });
+
+    } catch (e) {
+        console.error('Error al cargar los productos:', e);
     }
-]
-
-window.addEventListener('load', ()=>{
-    const cards = cardData.map(e=>{
-        return cardProductComponent(e)
-    }).join('')
-    cardProductConteiner.innerHTML = cards
-})
-
-*/
+});
